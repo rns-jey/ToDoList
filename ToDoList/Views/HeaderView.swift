@@ -31,7 +31,7 @@ struct HeaderView: View {
             .position(x: geometry.size.width / 2, y: 50)
             
             Spacer()
-        }
+        }.frame(height: 300)
     }
 }
 
