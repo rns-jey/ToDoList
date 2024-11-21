@@ -38,9 +38,16 @@ struct LoginView: View {
                 }
             }
             
-            
-            
             // Register button
+            VStack {
+                Text("New around here?")
+                Button("Create an Account") {
+                    // Show registration
+                }
+            }
+            .padding(.bottom, 50)
+            
+            Spacer()
         }
     }
 }
