@@ -28,18 +28,13 @@ struct LoginView: View {
                     SecureField("Password", text: $password)
                         .textFieldStyle(DefaultTextFieldStyle())
                 
-                    Button {
-                        // Attempt login
-                    } label: {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 10)
-                                .foregroundStyle(Color.blue)
-                            
-                            Text("Log In")
-                                .foregroundStyle(Color.white)
-                                .bold()
-                        }
+                    TLButton(
+                        title: "Login",
+                        bgcolor: .blue
+                    ) {
+                      // Login action
                     }
+                    .padding()
                 }
                 .offset(y: -20)
                 
