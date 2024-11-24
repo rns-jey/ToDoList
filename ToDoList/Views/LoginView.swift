@@ -23,8 +23,9 @@ struct LoginView: View {
                 
                 // Login Form
                 Form {
-                    TextField("Email Address", text: $email)
+                    TextField("Email address", text: $email)
                         .textFieldStyle(DefaultTextFieldStyle())
+                        .autocapitalization(.none)
                     SecureField("Password", text: $password)
                         .textFieldStyle(DefaultTextFieldStyle())
                 
