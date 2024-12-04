@@ -19,8 +19,16 @@ struct LoginView: View {
                            angle: 15,
                            bgColor: .pink)
                 
+               
+                
                 // Login Form
                 Form {
+                    
+                    if !viewModel.errorMessage.isEmpty {
+                        Text(viewModel.errorMessage)
+                            .foregroundStyle(Color.red)
+                    }
+                    
                     TextField("Email address", text: $viewModel.email)
                         .textFieldStyle(DefaultTextFieldStyle())
                         .autocapitalization(.none)
@@ -31,7 +39,7 @@ struct LoginView: View {
                         title: "Login",
                         bgcolor: .blue
                     ) {
-                      // Login action
+                        viewModel.login()
                     }
                     .padding()
                 }
