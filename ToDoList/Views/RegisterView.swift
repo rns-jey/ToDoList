@@ -9,9 +9,7 @@ import SwiftUI
 
 struct RegisterView: View {
     
-    @State var fullname = ""
-    @State var email = ""
-    @State var password = ""
+    
     
     var body: some View {
         NavigationView {
