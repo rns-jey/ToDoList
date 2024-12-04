@@ -6,6 +6,7 @@
 //
 
 import FirebaseAuth
+import FirebaseFirestore
 import Foundation
 
 class RegisterViewModel: ObservableObject {
@@ -32,7 +33,13 @@ class RegisterViewModel: ObservableObject {
     }
     
     private func newUserRecord(id: String) {
+        let newUser = User(id: id, name: fullname, email: email, joined: Date().timeIntervalSince1970)
         
+        let db = Firestore.firestore()
+        
+        db.collection("users")
+            .document(id)
+            .setData(newUser.asDictionary())
     }
     
     private func validate() -> Bool {
