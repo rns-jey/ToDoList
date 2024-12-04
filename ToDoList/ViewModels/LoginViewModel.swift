@@ -24,9 +24,18 @@ class LoginViewModel: ObservableObject {
     init() {}
     
     func login() {
+        errorMessage = ""
         guard
             !email.trimmingCharacters(in: .whitespaces).isEmpty,
             !password.trimmingCharacters(in: .whitespaces).isEmpty else {
+            
+            errorMessage = "Username and password is required."
+            
+            return
+        }
+        
+        guard email.trimmingCharacters(in: .whitespaces).isValidEmail else {
+            errorMessage = "Please input a valid email"
             
             return
         }
