@@ -36,6 +36,7 @@ struct RegisterView: View {
                         bgcolor: .green
                     ) {
                       // Register action
+                        viewModel.register()
                     }
                     .padding()
                 }
