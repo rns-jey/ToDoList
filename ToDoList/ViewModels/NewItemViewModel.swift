@@ -17,4 +17,8 @@ class NewItemViewModel: ObservableObject {
     func save()  {
         
     }
+    
+    var canSave: Bool {
+        return true
+    }
 }
