@@ -27,8 +27,12 @@ struct NewItemView: View {
                 
                 // Button
                 TLButton(title: "Save", bgcolor: .blue) {
-                    viewModel.save()
-                    newItemPresented = false
+                    if viewModel.canSave {
+                        viewModel.save()
+                        newItemPresented = false
+                    } else {
+                        // show error
+                    }
                 }
                 .padding()
                 
